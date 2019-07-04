@@ -2,18 +2,15 @@ package stack
 
 type SliceStack struct {
 	top, length int
-	items []int
+	items       []int
 }
 
-
-func NewSliceStack() SliceStack{
+func NewSliceStack() SliceStack {
 	stack := SliceStack{}
 	stack.top = -1
-	stack.length = 0
 	stack.items = []int{}
 	return stack
 }
-
 
 func (s *SliceStack) Push(value int) {
 	s.top++
@@ -26,7 +23,7 @@ func (s *SliceStack) Pop() int {
 		panic("Empty stack")
 	}
 	item := s.items[s.top]
-	s.items = s.items[:len(s.items) - 1]
+	s.items = s.items[:len(s.items)-1]
 	s.top--
 	s.length--
 	return item
@@ -39,4 +36,3 @@ func (s *SliceStack) Top() int {
 	item := s.items[s.top]
 	return item
 }
-
