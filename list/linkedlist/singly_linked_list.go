@@ -76,25 +76,49 @@ func (list *SinglyLinkedList) InsertAt(item, index int) {
 	list.length++
 }
 
-func (list *SinglyLinkedList) RemoveAt(index int) {
-	if list.Size() == 0 && index != 0 {
+func (list *SinglyLinkedList) RemoveAt(index int) (int, error) {
+	size := list.Size()
+	if size == 0 {
 		panic("Cannot remove from an empty list")
-	} else if index > list.Size() {
+	} else if index > size-1 {
 		panic("Cannot remove beyond the list")
 	}
 	if index == 0 {
 		list.head = list.head.next
 		list.length--
+		return list.head.value, nil
 	} else {
 		currentNode := list.head
-		var counter = 0
-		for currentNode != nil && counter < index-1 {
+		var counter = 1
+		for currentNode != nil && counter < index {
 			counter++
 			currentNode = currentNode.next
 		}
+		list.length--
+		value := currentNode.next.value
 		currentNode.next = currentNode.next.next
+		return value, nil
 	}
-	list.length--
+}
+
+func (list *SinglyLinkedList) ValueAt(index int) (int, error) {
+	size := list.Size()
+	if size == 0 {
+		panic("Cannot remove from an empty list")
+	} else if index > size-1 {
+		panic("Cannot remove beyond the list")
+	}
+	if index == 0 {
+		return list.head.value, nil
+	} else {
+		currentNode := list.head
+		var counter = 1
+		for currentNode != nil && counter < index {
+			counter++
+			currentNode = currentNode.next
+		}
+		return currentNode.next.value, nil
+	}
 }
 
 func (list *SinglyLinkedList) Print() {
