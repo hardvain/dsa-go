@@ -1,4 +1,4 @@
-package linkedlist
+package list
 
 import (
 	"gotest.tools/assert"

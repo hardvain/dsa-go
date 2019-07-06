@@ -2,7 +2,6 @@ package stack
 
 import (
 	"dsa/list"
-	"dsa/list/linkedlist"
 )
 
 type ListStack struct {
@@ -11,7 +10,7 @@ type ListStack struct {
 
 func NewListStack() ListStack {
 	var l list.List
-	singlyLinkedList := linkedlist.NewSinglyLinkedList()
+	singlyLinkedList := list.NewSinglyLinkedList()
 	l = &singlyLinkedList
 	s := ListStack{list: l}
 	return s
