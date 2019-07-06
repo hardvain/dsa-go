@@ -6,35 +6,35 @@ import (
 )
 
 func TestArrayQueueCreation(t *testing.T) {
-	arrayStack := NewArrayQueue()
-	assert.Assert(t, arrayStack.top == -1)
-	assert.Assert(t, arrayStack.rear == 0)
-	assert.Assert(t, arrayStack.Size() == 0)
+	arrayQueue := NewArrayQueue()
+	assert.Assert(t, arrayQueue.top == -1)
+	assert.Assert(t, arrayQueue.rear == 0)
+	assert.Assert(t, arrayQueue.Size() == 0)
 }
 
 func TestArrakQueueEnqueue(t *testing.T) {
-	arrayStack := NewArrayQueue()
-	arrayStack.Enqueue(20)
-	assert.Assert(t, arrayStack.top == 0)
-	assert.Assert(t, arrayStack.rear == 0)
-	assert.Assert(t, arrayStack.Size() == 1)
-	arrayStack.Enqueue(30)
-	arrayStack.Enqueue(40)
-	assert.Assert(t, arrayStack.top == 2)
-	assert.Assert(t, arrayStack.rear == 0)
-	assert.Assert(t, arrayStack.Size() == 3)
+	arrayQueue := NewArrayQueue()
+	arrayQueue.Enqueue(20)
+	assert.Assert(t, arrayQueue.top == 0)
+	assert.Assert(t, arrayQueue.rear == 0)
+	assert.Assert(t, arrayQueue.Size() == 1)
+	arrayQueue.Enqueue(30)
+	arrayQueue.Enqueue(40)
+	assert.Assert(t, arrayQueue.top == 2)
+	assert.Assert(t, arrayQueue.rear == 0)
+	assert.Assert(t, arrayQueue.Size() == 3)
 
 }
 
 func TestArrayQueueDequeue(t *testing.T) {
-	arrayStack := NewArrayQueue()
-	arrayStack.Enqueue(20)
-	arrayStack.Enqueue(30)
-	arrayStack.Enqueue(40)
-	item := arrayStack.Dequeue()
+	arrayQueue := NewArrayQueue()
+	arrayQueue.Enqueue(20)
+	arrayQueue.Enqueue(30)
+	arrayQueue.Enqueue(40)
+	item := arrayQueue.Dequeue()
 	assert.Assert(t, item == 20)
-	assert.Assert(t, arrayStack.top == 2)
-	assert.Assert(t, arrayStack.rear == 1)
-	assert.Assert(t, arrayStack.Size() == 2)
+	assert.Assert(t, arrayQueue.top == 2)
+	assert.Assert(t, arrayQueue.rear == 1)
+	assert.Assert(t, arrayQueue.Size() == 2)
 
 }

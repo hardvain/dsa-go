@@ -6,32 +6,32 @@ import (
 )
 
 func TestSliceStackCreation(t *testing.T) {
-	arrayStack := NewSliceStack()
-	assert.Assert(t, arrayStack.top == -1)
+	sliceStack := NewSliceStack()
+	assert.Assert(t, sliceStack.top == -1)
 }
 
 func TestSliceStackPush(t *testing.T) {
-	arrayStack := NewSliceStack()
-	arrayStack.Push(20)
-	assert.Assert(t, arrayStack.top == 0)
-	assert.Assert(t, arrayStack.Top() == 20)
+	sliceStack := NewSliceStack()
+	sliceStack.Push(20)
+	assert.Assert(t, sliceStack.top == 0)
+	assert.Assert(t, sliceStack.Top() == 20)
 }
 
 func TestSliceStackPop(t *testing.T) {
-	arrayStack := NewSliceStack()
-	arrayStack.Push(20)
-	arrayStack.Push(30)
-	item := arrayStack.Pop()
+	sliceStack := NewSliceStack()
+	sliceStack.Push(20)
+	sliceStack.Push(30)
+	item := sliceStack.Pop()
 	assert.Assert(t, item == 30)
-	assert.Assert(t, arrayStack.top == 0)
-	assert.Assert(t, arrayStack.Top() == 20)
+	assert.Assert(t, sliceStack.top == 0)
+	assert.Assert(t, sliceStack.Top() == 20)
 }
 
 func TestSliceStackTop(t *testing.T) {
-	arrayStack := NewSliceStack()
-	arrayStack.Push(20)
-	arrayStack.Push(30)
-	item := arrayStack.Top()
+	sliceStack := NewSliceStack()
+	sliceStack.Push(20)
+	sliceStack.Push(30)
+	item := sliceStack.Top()
 	assert.Assert(t, item == 30)
-	assert.Assert(t, arrayStack.top == 1)
+	assert.Assert(t, sliceStack.top == 1)
 }

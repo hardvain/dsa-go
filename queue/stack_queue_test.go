@@ -6,26 +6,26 @@ import (
 )
 
 func TestStackQueueCreation(t *testing.T) {
-	arrayStack := NewStackQueue()
-	assert.Assert(t, arrayStack.Size() == 0)
+	stackQueue := NewStackQueue()
+	assert.Assert(t, stackQueue.Size() == 0)
 }
 
 func TestStackQueueEnqueue(t *testing.T) {
-	arrayStack := NewStackQueue()
-	arrayStack.Enqueue(20)
-	assert.Assert(t, arrayStack.Size() == 1)
-	arrayStack.Enqueue(30)
-	arrayStack.Enqueue(40)
-	assert.Assert(t, arrayStack.Size() == 3)
+	stackQueue := NewStackQueue()
+	stackQueue.Enqueue(20)
+	assert.Assert(t, stackQueue.Size() == 1)
+	stackQueue.Enqueue(30)
+	stackQueue.Enqueue(40)
+	assert.Assert(t, stackQueue.Size() == 3)
 
 }
 
 func TestStackQueueDequeue(t *testing.T) {
-	arrayStack := NewStackQueue()
-	arrayStack.Enqueue(20)
-	arrayStack.Enqueue(30)
-	arrayStack.Enqueue(40)
-	item := arrayStack.Dequeue()
+	stackQueue := NewStackQueue()
+	stackQueue.Enqueue(20)
+	stackQueue.Enqueue(30)
+	stackQueue.Enqueue(40)
+	item := stackQueue.Dequeue()
 	assert.Assert(t, item == 20)
-	assert.Assert(t, arrayStack.Size() == 2)
+	assert.Assert(t, stackQueue.Size() == 2)
 }
