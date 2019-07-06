@@ -36,3 +36,7 @@ func (s *SliceStack) Top() int {
 	item := s.items[s.top]
 	return item
 }
+
+func (s *SliceStack) Size() int {
+	return len(s.items)
+}

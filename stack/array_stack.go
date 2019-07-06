@@ -16,6 +16,10 @@ func (s *ArrayStack) Push(value int) {
 	s.items[s.top] = value
 }
 
+func (s *ArrayStack) Size() int {
+	return s.top
+}
+
 func (s *ArrayStack) Pop() int {
 	if s.top == -1 {
 		panic("Empty stack")
@@ -33,4 +37,3 @@ func (s *ArrayStack) Top() int {
 	item := s.items[s.top]
 	return item
 }
-

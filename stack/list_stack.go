@@ -25,6 +25,10 @@ func (s *ListStack) Pop() int {
 	return i
 }
 
+func (s *ListStack) Size() int {
+	return s.list.Size()
+}
+
 func (s *ListStack) Top() int {
 	i, _ := s.list.ValueAt(s.list.Size() - 1)
 	return i
