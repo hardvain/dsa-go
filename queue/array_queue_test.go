@@ -12,7 +12,7 @@ func TestArrayQueueCreation(t *testing.T) {
 	assert.Assert(t, arrayStack.Size() == 0)
 }
 
-func TestArrayStackEnqueue(t *testing.T) {
+func TestArrakQueueEnqueue(t *testing.T) {
 	arrayStack := NewArrayQueue()
 	arrayStack.Enqueue(20)
 	assert.Assert(t, arrayStack.top == 0)
@@ -26,7 +26,7 @@ func TestArrayStackEnqueue(t *testing.T) {
 
 }
 
-func TestArrayStackDequeue(t *testing.T) {
+func TestArrayQueueDequeue(t *testing.T) {
 	arrayStack := NewArrayQueue()
 	arrayStack.Enqueue(20)
 	arrayStack.Enqueue(30)

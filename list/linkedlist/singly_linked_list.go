@@ -84,9 +84,10 @@ func (list *SinglyLinkedList) RemoveAt(index int) (int, error) {
 		panic("Cannot remove beyond the list")
 	}
 	if index == 0 {
+		value := list.head.value
 		list.head = list.head.next
 		list.length--
-		return list.head.value, nil
+		return value, nil
 	} else {
 		currentNode := list.head
 		var counter = 1

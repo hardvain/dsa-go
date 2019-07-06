@@ -55,3 +55,19 @@ func TestSinglyLinedListInsertAt(t *testing.T) {
 	assert.Assert(t, list.Contains(12))
 	assert.Assert(t, list.Contains(42))
 }
+
+func TestSinglyLinedListRemoveAt(t *testing.T) {
+	list := NewSinglyLinkedList()
+	assert.Assert(t, list.Size() == 0)
+	list.Append(20)
+	list.Append(30)
+	list.Append(40)
+	list.Append(50)
+	list.InsertAt(10, 0)
+	list.InsertAt(12, 3)
+	list.InsertAt(42, list.Size())
+	i, _ := list.RemoveAt(0)
+	assert.Assert(t, i == 10)
+	last, _ := list.RemoveAt(list.Size() - 1)
+	assert.Assert(t, last == 42)
+}
